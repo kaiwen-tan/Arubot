@@ -82,7 +82,7 @@ async def purge(ctx, i=2):
         await ctx.send("enter a valid number(0<x<50)")
 
 
-client.run('NzE0MTI3ODE2NDM3OTIzOTMw.XsrIUA.VC1icK0ICyAgglfDFZP5QPQ8NBQ')
+client.run('')
 
 # graveyard
 # @client.command()
