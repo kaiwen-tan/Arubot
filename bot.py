@@ -81,40 +81,8 @@ async def purge(ctx, i=2):
     else:
         await ctx.send("enter a valid number(0<x<50)")
 
-
+#this is where the token goes for the bot, i have hosted the bot already so if you'd like to run this yourself, please refer to the discord developer portal
 client.run('')
 
-# graveyard
-# @client.command()
-# async def quote(ctx, *, message):
-#     channel = discord.utils.get(client.get_all_channels(),
-#                                 guild__name=str(ctx.guild), name='quotes')
-#     out = '> ' + message + '\n' + '\n quoted by:' + ctx.author.mention
-#     out2 = '> ' + message + ' on: ' + date.today().strftime(
-#         "%B %d, %Y") + ' ' + time.strftime("%H:%M", time.localtime())
-#     await channel.send(out)
-#     with open('quote_data.txt', 'a') as output:
-#         output.write('\n' + out2 + '\n')
-#     print('quote saved')
-#
-#
-# @client.command()
-# async def randquote(ctx):
-#     lst = []
-#     with open('quote_data.txt', 'r') as f:
-#         for count, line in enumerate(f, start=1):
-#             if count % 2 == 0:
-#                 lst.append(line)
-#     await ctx.send(random.choice(lst))
 
-# players = {}
-#
-#
-# @client.command(pass_context=True)
-# async def play(ctx, url):
-#     server = ctx.message.guild
-#     channel = ctx.message.author.voice_channel
-#     voice_client = client.voice_client_in(server)
-#     player = await voice_client.create_ytdl_player(url)
-#     players[server.id] = player
-#     player.start()
+
