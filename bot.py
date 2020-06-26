@@ -81,7 +81,7 @@ async def purge(ctx, i=2):
     else:
         await ctx.send("enter a valid number(0<x<50)")
 
-#this is where the token goes for the bot, i have hosted the bot already so if you'd like to run this yourself, please refer to the discord developer portal
+#this is where the token goes for the bot, i have hosted the bot already but if you'd like to run this yourself, please refer to the discord developer portal and discord.py documentations.
 client.run('')
 
 
