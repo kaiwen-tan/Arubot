@@ -7,31 +7,31 @@ Basic function bot, with a focus on tracking quotes. Other functions include 8ba
 
 Polls:
 
-  quickpoll: start a poll
+    quickpoll: start a poll
   
-  tally: tallies the votes of the poll
+    tally: tallies the votes of the poll
   
 quotes:
 
-  quote: quote something, could be anything
+    quote: quote something, could be anything
   
-  randquote: displays a random quote stored for the server
+    randquote: displays a random quote stored for the server
   
 No Category:
 
-  8ball: standard 8ball  
+    8ball: standard 8ball  
   
-  help: shows all functions
+    help: shows all functions
   
-  listcogs: lists all the cogs(admin only)
+    listcogs: lists all the cogs(admin only)
   
-  load: load a cog(admin only)
+    load: load a cog(admin only)
   
-  unload unload a cog(admin only)
+    unload unload a cog(admin only)
   
-  purge: delete messages according to a number
+    purge: delete messages according to a number
   
-  functions: displays all functions
+    functions: displays all functions
   
   ping: gives speed of response to the bot
   
