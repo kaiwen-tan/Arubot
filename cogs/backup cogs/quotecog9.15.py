@@ -69,8 +69,9 @@ class quoteclass(commands.Cog):
             for k in out:
                 out2.append(''.join(k))
 
+            # print(out2)
             for item in out2:
-                if search.casefold() in item.casefold():
+                if search in item:
                     lst.append(item)
 
             if len(lst) == 0:
@@ -78,7 +79,7 @@ class quoteclass(commands.Cog):
             else:
                 await ctx.send(random.choice(lst))
 
-        elif count > 10:
+        elif count >= 10:
             await ctx.send('calm down there buddy less than 10 quotes at a '
                            'time')
 
@@ -87,53 +88,37 @@ class quoteclass(commands.Cog):
                            search + ', over ' + str(count) + ' times.' + '\n')
             await ctx.send('-----------------------------------------')
 
+
             out = []
-            # for i in range(count):
-            lst = []
-            file1 = open(f"quote_data_{ctx.guild.id}.txt", "r")
-            op = file1.readlines()
-            # print(op)
-            # out = []
-            indxs = []
-            for i in range(len(op)):
-                if op[i] == '\n':
-                    indxs.append(i)
+            for i in range(count):
+                lst = []
+                file1 = open(f"quote_data_{ctx.guild.id}.txt", "r")
+                op = file1.readlines()
+                # print(op)
+                out = []
+                indxs = []
+                for i in range(len(op)):
+                    if op[i] == '\n':
+                        indxs.append(i)
 
-            for j in range(len(indxs)):
-                if j + 1 <= len(indxs) - 1:
-                    out.append(op[indxs[j] + 1:indxs[j + 1]])
-                else:
-                    out.append(op[indxs[j] + 1:])
+                for j in range(len(indxs)):
+                    if j + 1 <= len(indxs) - 1:
+                        out.append(op[indxs[j] + 1:indxs[j + 1]])
+                    else:
+                        out.append(op[indxs[j] + 1:])
 
-            # print(out)
-            out2 = []
-            for k in out:
-                out2.append(''.join(k))
+                # print(out)
+                out2 = []
+                for k in out:
+                    out2.append(''.join(k))
 
-            # print(out2)
-            for item in out2:
-                if search.casefold() in item.casefold():
-                    lst.append(item)
-
-            random.shuffle(lst)
-
-            if count > len(lst):
-                for i in range(len(lst)):
-                    await ctx.send(lst[i])
-                await ctx.send('not enough quotes containing the word/phrase: ' 
-                               + search)
-                await ctx.send('searched and repeated over ' + str(len(lst)) + 
-                               ' times instead')
-            else:
-                for i in range(count):
-                    await ctx.send(lst[i])
-                await ctx.send('-----------------------------------------')
-                await ctx.send('***there are ' + str(len(lst)) +
-                               ' quotes containing: ' + search + '***')
-                await ctx.send('***that is about ' +
-                               str(round((len(lst)/len(out2))*100, 2)) +
-                               '% of all quotes***')
-
+                # print(out2)
+                for item in out2:
+                    if search in item:
+                        lst.append(item)
+                
+                out.append(random.choice(lst))
+                await ctx.send(random.choice(lst))
             if len(out) == 0:
                 await ctx.send('no quotes found for the entry: ' + search)
 

@@ -67,26 +67,16 @@ async def _8ball(ctx, *, question):
     await ctx.send(random.choice(lst))
 
 
-
-
 @client.command()
 @commands.has_permissions(manage_messages=True)
 async def purge(ctx, i=2):
     if i < 50:
-        await ctx.channel.purge(limit=i+1)
+        await ctx.channel.purge(limit=i)
     else:
         await ctx.send("enter a valid number(0<x<50)")
 
 
-@client.command()
-async def paypal(ctx):
-    await ctx.send('https://paypal.me/kevintan999?locale.x=en_US' + '\n'
-                                                                    'thanks '
-                                                                    'buddy '
-                                                                    ':)))')
-
-
-client.run('NzE0MTI3ODE2NDM3OTIzOTMw.Xxoqfw.vIqCq6JBwiUKBVWNqHi4xjcyUNg')
+client.run('NzE0MTI3ODE2NDM3OTIzOTMw.XsrIUA.VC1icK0ICyAgglfDFZP5QPQ8NBQ')
 
 # graveyard
 # @client.command()
